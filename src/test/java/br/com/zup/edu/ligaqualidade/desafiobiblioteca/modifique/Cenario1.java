@@ -105,9 +105,9 @@ public class Cenario1 {
 				pedidoEmprestimo2, pedidoEmprestimo3, pedidoEmprestimo4,
 				pedidoEmprestimo5);
 
-		if (emprestimos.size() != 5) {
-			throw new IllegalStateException("Alberto montou o cenário errado");
-		}
+//		if (emprestimos.size() != 5) {
+//			throw new IllegalStateException("Alberto montou o cenário errado");
+//		}
 
 		Set<DadosDevolucao> devolucoes = Set.of();
 
