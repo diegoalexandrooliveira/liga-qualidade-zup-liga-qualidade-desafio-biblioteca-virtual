@@ -27,17 +27,17 @@ public class Solucao {
      * @param usuarios      tipos de usuarios
      * @param emprestimos   informações de pedidos de empréstimos
      * @param devolucoes    informações de devoluções, caso exista.
-     * @param dataExpiracao aqui é a data que deve ser utilizada para verificar expiração
+     * @param dataAtual aqui é a data que deve ser utilizada para verificar expiração
      * @return
      */
     public static Set<EmprestimoConcedido> executa(Set<DadosLivro> livros,
                                                    Set<DadosExemplar> exemplares,
                                                    Set<DadosUsuario> usuarios, Set<DadosEmprestimo> emprestimos,
-                                                   Set<DadosDevolucao> devolucoes, LocalDate dataExpiracao) {
+                                                   Set<DadosDevolucao> devolucoes, LocalDate dataAtual) {
 
         ValidarEmprestimo validarEmprestimo = new ValidarEmprestimo();
 
-        return validarEmprestimo.validar(CriarPreEmprestimos.criar(exemplares, usuarios, emprestimos), dataExpiracao);
+        return validarEmprestimo.validar(CriarPreEmprestimos.criar(exemplares, usuarios, emprestimos), dataAtual, devolucoes);
     }
 
 

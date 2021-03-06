@@ -1,25 +1,19 @@
 package br.com.zup.edu.ligaqualidade.desafiobiblioteca.modifique;
 
+import br.com.zup.edu.ligaqualidade.desafiobiblioteca.DadosDevolucao;
+import br.com.zup.edu.ligaqualidade.desafiobiblioteca.DadosEmprestimo;
+import br.com.zup.edu.ligaqualidade.desafiobiblioteca.EmprestimoConcedido;
+import br.com.zup.edu.ligaqualidade.desafiobiblioteca.pronto.*;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.Collection;
 import java.util.List;
 import java.util.Set;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
-
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
-
-import br.com.zup.edu.ligaqualidade.desafiobiblioteca.DadosDevolucao;
-import br.com.zup.edu.ligaqualidade.desafiobiblioteca.DadosEmprestimo;
-import br.com.zup.edu.ligaqualidade.desafiobiblioteca.EmprestimoConcedido;
-import br.com.zup.edu.ligaqualidade.desafiobiblioteca.pronto.DadosExemplar;
-import br.com.zup.edu.ligaqualidade.desafiobiblioteca.pronto.DadosLivro;
-import br.com.zup.edu.ligaqualidade.desafiobiblioteca.pronto.DadosUsuario;
-import br.com.zup.edu.ligaqualidade.desafiobiblioteca.pronto.TipoExemplar;
-import br.com.zup.edu.ligaqualidade.desafiobiblioteca.pronto.TipoUsuario;
 
 public class Cenario6 {
 
@@ -123,8 +117,9 @@ public class Cenario6 {
 		List<LocalDate> datasPrevistasDevolucaoRetornadas = resultados.stream()
 				.map(r -> r.dataPrevistaDevolucao).collect(Collectors.toList());
 		LocalDate previsaoEntrega = hoje.plusDays(10);
-		List<LocalDate> datasPrevistasEsperadas = List.of(previsaoEntrega,
-				previsaoEntrega, previsaoEntrega);
+//		List<LocalDate> datasPrevistasEsperadas = List.of(previsaoEntrega,
+//				previsaoEntrega, previsaoEntrega);
+		List<LocalDate> datasPrevistasEsperadas = List.of(previsaoEntrega);
 		Assertions.assertEquals(datasPrevistasEsperadas,
 				datasPrevistasDevolucaoRetornadas);
 	}
